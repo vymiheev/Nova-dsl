@@ -2,7 +2,7 @@ $:.push "."
 $:.push File.expand_path("../lib", __FILE__)
 require "lib/version"
 Gem::Specification.new do |s|
-  s.name        = "nova-client-dsl"
+  s.name        = "nova-dsl"
   s.version     = NovaDsl::VERSION
   s.authors     = ["gapcoder"]
   s.email       = ["vlaskinvlad@gmail.com"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Dsl wrapper for python nova-client}
   s.description = %q{Call this from a line nova-client}
 
-  s.rubyforge_project = "nova-client-dsl"
+  s.rubyforge_project = "nova-dsl"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

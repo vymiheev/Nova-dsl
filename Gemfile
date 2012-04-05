@@ -7,7 +7,6 @@ gem 'gemcutter'
 gem 'net-ssh'
 gem 'net-scp'
 
-
 group :development do
   gem 'rspec'
 end

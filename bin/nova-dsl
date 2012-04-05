@@ -1,6 +1,8 @@
 #! /usr/bin/ruby
+$:.push '.'
+require "lib/version"
 
 require 'ap'
 
-ap "nova-dsl-ruby"
+ap "nova-dsl, version: #{NovaDsl::VERSION}"
 ap ARGV

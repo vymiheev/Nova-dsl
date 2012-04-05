@@ -4,7 +4,7 @@ require "lib/nova_error"
 
 module NovaDsl
 
-  class Executor
+  class Provision
 
     attr_accessor :image, :flavor
 
