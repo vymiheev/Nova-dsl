@@ -1,7 +1,10 @@
 $:.push '.', '..'
-gem 'nova-dsl'
-require '../lib/nova_wrapper'
+#require 'nova-dsl'
+require "lib/nova-dsl"
 
-NovaDsl::Provision.new "my new name" do
-  ap 'Hellow world'
+# Internal dsl example of provisioning new vm
+Provision.new "my new name" do
+  image 543
+  flavor 3
+  dns_name "test.xcom.me"
 end

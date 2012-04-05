@@ -2,9 +2,7 @@ $:.push('.')
 require "lib/common/log"
 require "lib/nova_error"
 
-module NovaDsl
-
-  class Provision
+class Provision
 
     attr_accessor :image, :flavor
 
@@ -14,8 +12,5 @@ module NovaDsl
 
       yield(block) if block_given?
     end
-
-  end
-
 
 end
