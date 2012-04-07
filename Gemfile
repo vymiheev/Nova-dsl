@@ -9,4 +9,5 @@ gem 'net-scp'
 
 group :development do
   gem 'rspec'
+  gem 'metric_fu'
 end
