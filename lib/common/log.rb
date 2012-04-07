@@ -85,7 +85,7 @@ module Common
     def level=(val);@logger.level= val end
 
     def reinitialize(cfg)
-      @logger = Logger.new cfg[:device]
+      @logger = Logger.new(cfg[:device])
       @logger.level= cfg[:level]
       @logger.datetime_format= cfg[:formatter]
     end

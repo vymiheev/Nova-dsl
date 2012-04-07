@@ -6,5 +6,4 @@ module NovaDsl
 
   class DslMissBody < DslSyntaxError; end
 
-
 end

@@ -1,10 +1,15 @@
 $:.push '.', '..'
 #require 'nova-dsl'
 require "lib/nova-dsl"
+require 'ap'
+
 
 # Internal dsl example of provisioning new vm
-Provision.new "my new name" do
+Provision.new "jenkins" do
   image 543
-  flavor 3
-  dns_name "test.xcom.me"
+  flavor 4
+  key "gd1"
+  dns_name "jenkins"
+  security_groups ['deafult', 'noname']
 end
+
