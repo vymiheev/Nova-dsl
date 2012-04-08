@@ -20,7 +20,8 @@ module NovaDsl
     end
 
     def run
-      nova_list
+      container = nova_list
+      LOGGER.debug("Returning container size: #{container.size}")
     end
 
   end

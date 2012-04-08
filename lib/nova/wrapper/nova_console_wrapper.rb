@@ -3,6 +3,7 @@ require 'lib/common/log'
 require 'lib/common/helpers'
 require 'lib/nova/utils/nova_error'
 require 'lib/nova/wrapper/nova_stdout_parser'
+require 'lib/nova/utils/nova_vm'
 
 module NovaDsl
 
@@ -33,14 +34,16 @@ module NovaDsl
         "/usr/local/bin/nova list"
       }
 
+      vms = NovaDsl::NovaVmsContainer.new
+
       results.each do |result|
         if result[:status].eql?(0)
-          parse_nova_list_stdout result[:out]
+        vms.merge!(parse_nova_list_stdout result[:out])
         else
           LOGGER.debug("Skipping command stdout parsing because exitstatus is #{result[:status]}")
         end
       end
-
+      vms
     end
 
     def nova_delete

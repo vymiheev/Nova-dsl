@@ -23,7 +23,6 @@ module Common
       def configure(log_cfg = {})
           @@cfg = @@default_cfg.merge(log_cfg)
           @@configured = true
-
       end
 
       def new

@@ -22,11 +22,10 @@ module NovaDsl
       initial_strings = stdout.split("\n")
       LOGGER.debug("Parsing #{initial_strings.size} lines, assuming first three should be a headers and other stuff")
 
-      vms = []
+      vms = NovaDsl::NovaVmsContainer.new
 
       initial_strings.each_with_index do |line, index|
         columns = line.split("|").map{|s| s.strip}
-        LOGGER.debug("Column slices: #{columns*","} \n")
         if index >=3 && columns.size.eql?(5)
           id = columns[1].to_i
           name = columns[2].to_s
@@ -36,9 +35,7 @@ module NovaDsl
           vms << NovaDsl::NovaVm.new(id, name, ip, status)
         end
       end
-
       vms
-
     end
 
   end
