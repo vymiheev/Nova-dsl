@@ -1,6 +1,6 @@
 $:.push '.', "..", File.expand_path("../../lib", __FILE__)
 
-require "nova/nova_provision"
-require "nova/nova_list"
+require 'nova/commands/nova_provision'
+require 'nova/commands/nova_list'
 
 

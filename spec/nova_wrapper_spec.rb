@@ -2,12 +2,12 @@ $:.push '.'
 
 require 'rspec'
 
-require 'lib/wrapper/nova_wrapper'
+require 'lib/nova/wrapper/nova_console_wrapper'
 
 
-describe NovaDsl::ConsoleWrapper do
+describe NovaDsl::NovaConsoleWrapper do
 
-  include NovaDsl::ConsoleWrapper
+  include NovaDsl::NovaConsoleWrapper
 
   before :each do
     @name = 'foo_vm'
@@ -20,7 +20,7 @@ describe NovaDsl::ConsoleWrapper do
 
   it "should be able to provision vm" do
     pending
-    provision({ }).should raise_error
+    nova_provision({ }).should raise_error
   end
 
   it "should raise error when accepting nil args"

@@ -1,6 +1,6 @@
-$:.push '.', '..', '../..'
+  $:.push '.', '..', '../..'
 require 'lib/common/log'
-require "open4"
+require 'open4'
 
 
 module Common
@@ -32,7 +32,7 @@ module Common
     block_commands.each do |cmd|
       composite = src + cmd
       status = Open4::popen4(composite) do |pid, stdin, stdout, stderr|
-        LOGGER.debug("Command '#{src + cmd}' is running as pid: #{pid} ")
+        LOGGER.debug("Command '#{composite}' is running as pid: #{pid} ")
         proc_pid = pid
         result_stdout = stdout.read.strip
         result_stderr = stderr.read.strip

@@ -1,4 +1,7 @@
+$:.push '.', '..', './lib', File.expand_path(File.dirname(__FILE__))
+
 require "bundler/gem_tasks"
+
 
 task :default => :test
 

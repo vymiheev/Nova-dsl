@@ -1,4 +1,6 @@
 $:.push '.', '..'
 require "lib/nova-dsl"
 
-NovaList.new
+nova_list
+
+

@@ -2,7 +2,5 @@
 $:.push '.'
 require "lib/version"
 
-require 'ap'
+puts 'Nova dsl has not been implemented yet '
 
-ap "nova-dsl, version: #{NovaDsl::VERSION}"
-ap ARGV
