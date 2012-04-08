@@ -7,9 +7,9 @@ require 'lib/wrapper/nova_wrapper'
 
 describe NovaDsl::ConsoleWrapper do
 
-  before :each do
-    @wrapper = NovaDsl::ConsoleWrapper
+  include NovaDsl::ConsoleWrapper
 
+  before :each do
     @name = 'foo_vm'
     @flavor = 3
     @image = 543
@@ -19,9 +19,8 @@ describe NovaDsl::ConsoleWrapper do
   end
 
   it "should be able to provision vm" do
-    Kernel.stub!(:system)
-    Kernel.should_receive(:system).once.and_return(true)
-    @wrapper.provision({ })
+    pending
+    provision({ }).should raise_error
   end
 
   it "should raise error when accepting nil args"

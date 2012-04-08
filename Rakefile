@@ -2,7 +2,7 @@ require "bundler/gem_tasks"
 
 task :default => :test
 
-task :test => [:rspec, :rspec_report]
+task :test => [:rspec_report, :rspec]
 
 require 'rspec'
 require 'rspec/core/rake_task'
