@@ -5,10 +5,10 @@ require 'rspec'
 require 'lib/wrapper/nova_wrapper'
 
 
-describe NovaDsl::Wrapper do
+describe NovaDsl::ConsoleWrapper do
 
   before :each do
-    @wrapper = NovaDsl::Wrapper
+    @wrapper = NovaDsl::ConsoleWrapper
 
     @name = 'foo_vm'
     @flavor = 3
@@ -21,7 +21,7 @@ describe NovaDsl::Wrapper do
   it "should be able to provision vm" do
     Kernel.stub!(:system)
     Kernel.should_receive(:system).once.and_return(true)
-    @wrapper.provision(@name, @image, @flavor, @key, @security_groups)
+    @wrapper.provision({ })
   end
 
   it "should raise error when accepting nil args"

@@ -1,5 +1,6 @@
-# A sample Gemfile
 source "http://rubygems.org"
+
+gem 'open4'
 
 gem 'awesome_print'
 gem 'rake'
