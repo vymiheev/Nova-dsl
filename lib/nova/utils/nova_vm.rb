@@ -18,6 +18,13 @@ module NovaDsl
       @ip = ip
       @status = status
     end
+
+    def self.fabric(configs = { })
+      LOGGER.debug("Fabric new NovaVm class with properties #{configs.inspect}")
+      Common::type_checker configs, Hash
+
+    end
+
   end
 
   class NovaVmsContainer

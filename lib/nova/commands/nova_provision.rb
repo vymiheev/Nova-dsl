@@ -1,4 +1,4 @@
-$:.push '.', '..'
+$:.push '.'
 require 'lib/common/log'
 require 'lib/nova/utils/nova_error'
 require 'lib/common/attribute_resolver'
@@ -29,7 +29,21 @@ module NovaDsl
     end
 
     def run
-      nova_provision({ })
+      nova_provision(provision_manifest)
+    end
+
+    def provision_manifest
+      LOGGER.debug("Checking provision manifest")
+      vars = self.instance_variables
+      raise DslMissParameter.new("Missing missing parameter 'name'") unless vars.include?(:@name)
+      raise DslMissParameter.new("Missing missing parameter 'image'") unless vars.include?(:@image)
+      raise DslMissParameter.new("Missing missing parameter 'flavor'") unless vars.include?(:@flavor)
+      raise DslMissParameter.new("Missing missing parameter 'key_name'") unless vars.include?(:@key)
+
+      res = {:name => @name, :image => @image, :flavor => @flavor, :key => @key}
+      res.merge!(:source => @profile) unless @profile.nil?
+      LOGGER.debug("Configuring provision configuration: #{res}")
+      res
     end
 
     def to_s

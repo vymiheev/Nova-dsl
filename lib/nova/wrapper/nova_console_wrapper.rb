@@ -22,8 +22,10 @@ module NovaDsl
 
       configs[:security_groups] ||= %w(default)
 
-      Common::system_call {
-        "nova boot --image #{configs[:image]} --flavor #{configs[:flavor]} --key_name #{configs[:key]} --security_groups #{configs[:security_groups]*','} #{configs[:name]}"
+      configs[:source] ||= ''
+
+      Common::system_call(:source => configs[:source]){
+        "/usr/local/bin/nova boot --image #{configs[:image]} --flavor #{configs[:flavor]} --key_name #{configs[:key]} --security_groups #{configs[:security_groups]*','} #{configs[:name]}"
 
       }
     end

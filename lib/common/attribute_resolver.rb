@@ -1,5 +1,8 @@
 require 'lib/common/log'
 
+
+#Habdles unknown method calls with arguments as variable sets
+
 module Common
   module DefaultAttributeResolver
 
@@ -14,5 +17,6 @@ module Common
         self.class.send(:define_method, name, proc { instance_variable_get("@#{name}") })
       end
     end
+
   end
 end
