@@ -9,7 +9,7 @@ module Common
   # @param block [Proc] system call 'system' or whateveg
   # @return [Object] console output of the call within block
   def self.system_call(args ={}, &block)
-
+    LOGGER.debug("Calling system calls with parameters: #{args}")
     type_checker args[:source], String
     src = "source #{args[:source]} && " unless args[:source].nil?
     src ||= ''
@@ -25,6 +25,7 @@ module Common
 
     block_commands = yield
     block_commands = block_commands.split("\n").map { |x| x.strip }
+    LOGGER.debug("Calling system call with args: #{args.inspect} \n commands: #{block_commands*"\n"}")
 
     result_stdout = nil
     result_stderr = nil
@@ -41,7 +42,6 @@ module Common
       LOGGER.debug("Process #{proc_pid} finished, code: #{status.exitstatus}")
       if status.success?; ok_count+=1 else fail_count+=1 end
       LOGGER.error("#{result_stderr}") unless status.success?
-
 
       cmd_result = {}
       cmd_result[:status] = status.exitstatus

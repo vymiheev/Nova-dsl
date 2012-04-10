@@ -22,17 +22,15 @@ module NovaDsl
 
       configs[:security_groups] ||= %w(default)
 
-      configs[:source] ||= ''
-
-      Common::system_call(:source => configs[:source]){
+      Common::system_call(:source => configs[:source]) {
         "/usr/local/bin/nova boot --image #{configs[:image]} --flavor #{configs[:flavor]} --key_name #{configs[:key]} --security_groups #{configs[:security_groups]*','} #{configs[:name]}"
 
       }
     end
 
-    def nova_list
+    def nova_list(configs = {})
       LOGGER.debug("Call 'nova list' ")
-      results = Common::system_call(:source => '~/scripts/x25novaDEV.sh') {
+      results = Common::system_call(:source => configs[:source]) {
         "/usr/local/bin/nova list"
       }
 
@@ -40,7 +38,7 @@ module NovaDsl
 
       results.each do |result|
         if result[:status].eql?(0)
-        vms.merge!(parse_nova_list_stdout result[:out])
+          vms.merge!(parse_nova_list_stdout result[:out])
         else
           LOGGER.debug("Skipping command stdout parsing because exitstatus is #{result[:status]}")
         end
