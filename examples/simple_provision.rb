@@ -1,7 +1,5 @@
 $:.push '.', '..'
-#require 'nova-dsl'
-require "lib/nova-dsl"
-
+require 'nova-dsl'
 # Internal dsl example of provisioning new vm
 
 provision "dsl-test" do

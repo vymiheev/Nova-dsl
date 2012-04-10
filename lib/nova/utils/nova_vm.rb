@@ -1,6 +1,6 @@
 $:.push '.'
-require 'lib/common/log'
-require 'lib/common/helpers'
+require 'common/log'
+require 'common/helpers'
 
 module NovaDsl
 

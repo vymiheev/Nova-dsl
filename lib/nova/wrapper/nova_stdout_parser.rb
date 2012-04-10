@@ -1,8 +1,8 @@
 $:.push '.'
-require 'lib/common/log'
-require 'lib/common/helpers'
-require 'lib/nova/utils/nova_error'
-require 'lib/nova/utils/nova_vm'
+require 'common/log'
+require 'common/helpers'
+require 'nova/utils/nova_error'
+require 'nova/utils/nova_vm'
 
 module NovaDsl
 

@@ -1,5 +1,5 @@
   $:.push '.', '..', '../..'
-require 'lib/common/log'
+require 'common/log'
 require 'open4'
 
 

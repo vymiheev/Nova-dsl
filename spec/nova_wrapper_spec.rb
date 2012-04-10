@@ -2,7 +2,7 @@ $:.push '.'
 
 require 'rspec'
 
-require 'lib/nova/wrapper/nova_console_wrapper'
+require 'nova/wrapper/nova_console_wrapper'
 
 
 describe NovaDsl::NovaConsoleWrapper do

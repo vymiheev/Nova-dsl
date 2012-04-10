@@ -1,8 +1,8 @@
 $:.push '.'
-require 'lib/common/log'
-require 'lib/nova/utils/nova_error'
-require 'lib/common/attribute_resolver'
-require 'lib/nova/wrapper/nova_console_wrapper'
+require 'common/log'
+require 'nova/utils/nova_error'
+require 'common/attribute_resolver'
+require 'nova/wrapper/nova_console_wrapper'
 
 class << self
   def nova_list(&script)

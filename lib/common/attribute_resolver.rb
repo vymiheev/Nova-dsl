@@ -1,4 +1,4 @@
-require 'lib/common/log'
+require 'common/log'
 
 
 #Habdles unknown method calls with arguments as variable sets

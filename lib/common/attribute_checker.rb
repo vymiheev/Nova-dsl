@@ -1,4 +1,4 @@
-require 'lib/common/log'
+require 'common/log'
 
 module Common
 
