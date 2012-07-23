@@ -1,5 +1,6 @@
 source "http://rubygems.org"
-
+gem 'rubygems'
+gem 'nova-dsl'
 gem 'open4'
 gem 'awesome_print'
 gem 'rake'

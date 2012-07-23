@@ -12,7 +12,7 @@ module NovaDsl
     attr_accessor :id, :name, :status, :ip
 
     def initialize(id, name, ip = nil, status = nil)
-      LOGGER.debug("New NovaVm cerated: id: #{id}, name: #{name}, ip:#{ip}, status: #{status}")
+      LOGGER.debug("New NovaVm created: id: #{id}, name: #{name}, ip:#{ip}, status: #{status}")
       @id = id
       @name = name
       @ip = ip

@@ -13,6 +13,7 @@ end
 module NovaDsl
   class NovaList
 
+
     include NovaDsl::NovaConsoleWrapper
 
     def initialize(&script)
@@ -21,7 +22,6 @@ module NovaDsl
 
     def run
       container = nova_list
-      LOGGER.debug("Returning container size: #{container.size}")
     end
 
   end
